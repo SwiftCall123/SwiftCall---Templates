@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCall AI — Pricing Packages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid rgba(184,134,11,0.3);
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #B8860B;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #888;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #B8860B;
+            text-align: center;
+            margin: 60px 0 10px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .packages {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .package {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 40px 30px;
+            position: relative;
+            transition: border-color 0.3s;
+        }
+        .package:hover { border-color: rgba(184,134,11,0.5); }
+        .package.featured {
+            border-color: #B8860B;
+            box-shadow: 0 0 40px rgba(184,134,11,0.1);
+        }
+        .package.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #B8860B;
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        .package h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .package .vertical {
+            color: #B8860B;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .price .setup {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+        .price .setup span {
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .price .monthly {
+            font-size: 14px;
+            color: #888;
+            margin-top: 8px;
+        }
+        .price .monthly span {
+            color: #B8860B;
+            font-weight: 700;
+            font-size: 32px;
+        }
+        .price .monthly small {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #ccc;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .features li::before {
+            content: '✓';
+            color: #B8860B;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .ideal {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1a;
+        }
+        .ideal h4 {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .ideal p {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.5;
+        }
+
+        /* ADD-ONS */
+        .addons {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .addon {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .addon-info h4 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .addon-info p {
+            font-size: 13px;
+            color: #888;
+        }
+        .addon-price {
+            text-align: right;
+            white-space: nowrap;
+        }
+        .addon-price .amt {
+            color: #B8860B;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .addon-price .per {
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* TERMS */
+        .terms {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+        }
+        .terms h3 {
+            font-family: 'Playfair Display', serif;
+            color: #B8860B;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .terms ul {
+            list-style: none;
+        }
+        .terms li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #999;
+            border-bottom: 1px solid #111;
+        }
+        .terms li:last-child { border: none; }
+        .terms li strong { color: #ccc; }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #333;
+            font-size: 13px;
+        }
+        .footer a { color: #B8860B; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .packages, .addons { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>SwiftCall AI Solutions</h1>
+    <p>AI Voice Agents & Automation — Pricing Packages</p>
+</div>
+
+<!-- CORE PACKAGES -->
+<h2 class="section-title">Core Packages</h2>
+<p class="section-subtitle">Setup fee + monthly retainer. Cancel anytime after minimum term.</p>
+
+<div class="packages">
+
+    <!-- STARTER -->
+    <div class="package">
+        <h3>Starter</h3>
+        <div class="vertical">Single-Line AI Receptionist</div>
+        <div class="price">
+            <div class="setup">Setup: <span>$2,000</span></div>
+            <div class="monthly"><span>$1,500</span><small>/mo</small></div>
+        </div>
+        <ul class="features">
+            <li>1 AI voice agent on your main line</li>
+            <li>Call answering, routing & message taking</li>
+            <li>Business hours + after-hours handling</li>
+            <li>Up to 3 department transfers</li>
+            <li>Email notifications for missed calls</li>
+            <li>Monthly call performance report</li>
+            <li>Prompt optimization (monthly)</li>
+        </ul>
+        <div class="ideal">
+            <h4>Ideal For</h4>
+            <p>Small businesses tired of missing calls. Restaurants, salons, dental offices, law firms with 1 main line.</p>
+        </div>
+    </div>
+
+    <!-- PROFESSIONAL -->
+    <div class="package featured">
+        <h3>Professional</h3>
+        <div class="vertical">Full AI Receptionist + Automation</div>
+        <div class="price">
+            <div class="setup">Setup: <span>$3,500</span></div>
+            <div class="monthly"><span>$2,500</span><small>/mo</small></div>
+        </div>
+        <ul class="features">
+            <li>Everything in Starter, plus:</li>
+            <li>Up to 8 department transfers</li>
+            <li>Custom knowledge base (FAQ, hours, services)</li>
+            <li>n8n automation workflows (up to 3)</li>
+            <li>CRM integration (GoHighLevel or existing)</li>
+            <li>Daily status updates via form integration</li>
+            <li>Weekly call performance reports</li>
+            <li>Bi-weekly prompt optimization</li>
+            <li>Priority support (same-day response)</li>
+        </ul>
+        <div class="ideal">
+            <h4>Ideal For</h4>
+            <p>Multi-department businesses. Golf clubs, country clubs, medical offices, property management companies, hotels.</p>
+        </div>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="package">
+        <h3>Enterprise</h3>
+        <div class="vertical">Full Stack AI Operations</div>
+        <div class="price">
+            <div class="setup">Setup: <span>$7,500</span></div>
+            <div class="monthly"><span>$5,000</span><small>/mo</small></div>
+        </div>
+        <ul class="features">
+            <li>Everything in Professional, plus:</li>
+            <li>Multiple AI agents (inbound + outbound)</li>
+            <li>Unlimited department routing</li>
+            <li>Unlimited automation workflows</li>
+            <li>Custom website (React/Next.js on Vercel)</li>
+            <li>Outbound campaign setup & management</li>
+            <li>Full CRM build-out & pipeline automation</li>
+            <li>Daily transcript analysis & optimization</li>
+            <li>Dedicated Slack/Discord channel</li>
+            <li>Weekly strategy call</li>
+        </ul>
+        <div class="ideal">
+            <h4>Ideal For</h4>
+            <p>Businesses ready to fully automate their phones, leads, and client communication. Multi-location operations, franchises, high-volume service businesses.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- VERTICAL PACKAGES -->
+<h2 class="section-title">Industry Packages</h2>
+<p class="section-subtitle">Pre-built for specific industries. Faster setup, proven results.</p>
+
+<div class="packages">
+
+    <!-- GOLF -->
+    <div class="package">
+        <h3>Golf & Country Club</h3>
+        <div class="vertical">Built for Clubs</div>
+        <div class="price">
+            <div class="setup">Setup: <span>$3,500</span></div>
+            <div class="monthly"><span>$2,500</span><small>/mo</small></div>
+        </div>
+        <ul class="features">
+            <li>AI receptionist trained on golf operations</li>
+            <li>Tee time inquiries & booking info</li>
+            <li>Pro shop, events, lessons, membership routing</li>
+            <li>Starter desk & caddie coordination</li>
+            <li>Lodge/dining reservation handling</li>
+            <li>Seasonal hours & course status updates</li>
+            <li>Daily status form integration</li>
+            <li>Weekly performance reports</li>
+            <li>2-day setup (pre-built templates)</li>
+        </ul>
+        <div class="ideal">
+            <h4>Proven At</h4>
+            <p>Black Sheep Golf Club — handling 100% of inbound calls across 6 departments with daily dynamic updates.</p>
+        </div>
+    </div>
+
+    <!-- RESTAURANT -->
+    <div class="package">
+        <h3>Restaurant & Hospitality</h3>
+        <div class="vertical">Built for Restaurants</div>
+        <div class="price">
+            <div class="setup">Setup: <span>$2,500</span></div>
+            <div class="monthly"><span>$2,000</span><small>/mo</small></div>
+        </div>
+        <ul class="features">
+            <li>AI receptionist trained on restaurant ops</li>
+            <li>Reservation inquiries & party size handling</li>
+            <li>Menu questions & dietary accommodations</li>
+            <li>Hours, location, parking info</li>
+            <li>Private event & catering inquiries</li>
+            <li>Waitlist management integration</li>
+            <li>Multi-language support available</li>
+            <li>Weekly performance reports</li>
+            <li>3-day setup</li>
+        </ul>
+        <div class="ideal">
+            <h4>Ideal For</h4>
+            <p>Restaurants losing reservations to missed calls. Fine dining, fast casual, catering companies, bars & lounges.</p>
+        </div>
+    </div>
+
+    <!-- DENTAL/MEDICAL -->
+    <div class="package">
+        <h3>Dental & Medical</h3>
+        <div class="vertical">Built for Healthcare</div>
+        <div class="price">
+            <div class="setup">Setup: <span>$3,500</span></div>
+            <div class="monthly"><span>$2,500</span><small>/mo</small></div>
+        </div>
+        <ul class="features">
+            <li>AI receptionist trained on medical intake</li>
+            <li>Appointment scheduling inquiries</li>
+            <li>Insurance & billing question routing</li>
+            <li>New patient vs. existing patient flows</li>
+            <li>Emergency call escalation protocols</li>
+            <li>HIPAA-conscious call handling</li>
+            <li>Provider-specific routing</li>
+            <li>Weekly performance reports</li>
+            <li>3-day setup</li>
+        </ul>
+        <div class="ideal">
+            <h4>Ideal For</h4>
+            <p>Dental offices, dermatology clinics, chiropractic offices, veterinary clinics — any practice losing patients to voicemail.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ADD-ONS -->
+<h2 class="section-title">Add-Ons</h2>
+<p class="section-subtitle">Stack on top of any package.</p>
+
+<div class="addons">
+    <div class="addon">
+        <div class="addon-info">
+            <h4>Outbound Calling Agent</h4>
+            <p>AI agent for follow-ups, confirmations, appointment reminders</p>
+        </div>
+        <div class="addon-price">
+            <div class="amt">$1,500</div>
+            <div class="per">/mo + $1,500 setup</div>
+        </div>
+    </div>
+    <div class="addon">
+        <div class="addon-info">
+            <h4>Custom Website</h4>
+            <p>React/Next.js marketing site deployed on Vercel</p>
+        </div>
+        <div class="addon-price">
+            <div class="amt">$3,000</div>
+            <div class="per">one-time</div>
+        </div>
+    </div>
+    <div class="addon">
+        <div class="addon-info">
+            <h4>Additional Automation Workflows</h4>
+            <p>Custom n8n workflows beyond package allowance</p>
+        </div>
+        <div class="addon-price">
+            <div class="amt">$500</div>
+            <div class="per">/workflow</div>
+        </div>
+    </div>
+    <div class="addon">
+        <div class="addon-info">
+            <h4>SMS/Text Integration</h4>
+            <p>Twilio-powered text follow-ups after calls (TCPA compliant)</p>
+        </div>
+        <div class="addon-price">
+            <div class="amt">$500</div>
+            <div class="per">/mo + $500 setup</div>
+        </div>
+    </div>
+    <div class="addon">
+        <div class="addon-info">
+            <h4>CRM Setup (GoHighLevel)</h4>
+            <p>Full pipeline, automations, and lead management</p>
+        </div>
+        <div class="addon-price">
+            <div class="amt">$2,000</div>
+            <div class="per">one-time + $300/mo</div>
+        </div>
+    </div>
+    <div class="addon">
+        <div class="addon-info">
+            <h4>Additional Voice Agent Line</h4>
+            <p>Second phone number with its own AI agent</p>
+        </div>
+        <div class="addon-price">
+            <div class="amt">$800</div>
+            <div class="per">/mo + $1,000 setup</div>
+        </div>
+    </div>
+</div>
+
+<!-- TERMS -->
+<div class="terms">
+    <h3>Terms & Details</h3>
+    <ul>
+        <li><strong>Minimum term:</strong> 3 months on all retainer packages</li>
+        <li><strong>Billing:</strong> Setup fee due at signing. Monthly retainer billed on the 1st via Stripe</li>
+        <li><strong>Onboarding:</strong> Starter packages live in 3-5 days. Professional in 5-7 days. Enterprise in 10-14 days</li>
+        <li><strong>Call volume:</strong> All packages include up to 500 calls/month. Overage billed at $0.15/min</li>
+        <li><strong>Cancellation:</strong> 30-day written notice after minimum term. No cancellation fees</li>
+        <li><strong>Support:</strong> Email support included. Priority support (same-day) on Professional and Enterprise</li>
+        <li><strong>Optimization:</strong> Prompt and workflow tuning included at the frequency listed per package</li>
+        <li><strong>Ownership:</strong> Client owns all voice prompts and workflows. SwiftCall retains platform access</li>
+    </ul>
+</div>
+
+<div class="footer">
+    <p>SwiftCall AI Solutions — Chicago/Naperville, IL</p>
+    <p><a href="https://swiftcall.org">swiftcall.org</a> — (630) 352-3869</p>
+    <p style="margin-top: 10px;">danny@swiftcall.org — karim@swiftcall.org</p>
+</div>
+
+</body>
+</html>

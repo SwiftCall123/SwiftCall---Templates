@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCall AI — Service Agreement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #ddd; font-family: 'Inter', sans-serif; max-width: 850px; margin: 0 auto; padding: 40px 20px; }
+
+        .header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #B8860B;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #B8860B;
+            margin-bottom: 8px;
+        }
+        .header h2 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .header .effective {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .editable {
+            background: rgba(184,134,11,0.1);
+            border: 1px dashed rgba(184,134,11,0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #B8860B;
+        }
+
+        .parties {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 24px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+        }
+        .party h3 {
+            color: #B8860B;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .party p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .article {
+            margin-bottom: 36px;
+        }
+        .article h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #B8860B;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .article p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #bbb;
+            margin-bottom: 12px;
+        }
+        .article ol, .article ul {
+            margin: 12px 0 12px 20px;
+        }
+        .article li {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #bbb;
+            padding: 4px 0;
+        }
+
+        .signature-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #B8860B;
+        }
+        .signature-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #B8860B;
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .signatures {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .sig-block {
+            padding-top: 10px;
+        }
+        .sig-line {
+            border-top: 1px solid #444;
+            margin-top: 70px;
+            padding-top: 8px;
+        }
+        .sig-label {
+            color: #666;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sig-name {
+            color: #fff;
+            font-size: 15px;
+            margin-top: 4px;
+        }
+        .sig-date {
+            margin-top: 30px;
+        }
+        .sig-date .sig-line { margin-top: 30px; }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #111;
+            color: #333;
+            font-size: 12px;
+        }
+        .footer a { color: #B8860B; text-decoration: none; }
+
+        @media print {
+            body { background: #000; color: #ddd; }
+            .article { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>SwiftCall AI Solutions</h1>
+    <h2>Service Agreement</h2>
+    <div class="effective">Effective Date: <span class="editable">[DATE]</span></div>
+</div>
+
+<div class="parties">
+    <div class="party">
+        <h3>Service Provider</h3>
+        <p>
+            <strong>SwiftCall AI Solutions</strong><br>
+            Danny Al-Fanek & Karim Saad<br>
+            Chicago / Naperville, IL<br>
+            (630) 352-3869<br>
+            danny@swiftcall.org
+        </p>
+    </div>
+    <div class="party">
+        <h3>Client</h3>
+        <p>
+            <strong><span class="editable">[CLIENT BUSINESS NAME]</span></strong><br>
+            <span class="editable">[CONTACT NAME]</span><br>
+            <span class="editable">[ADDRESS]</span><br>
+            <span class="editable">[PHONE]</span><br>
+            <span class="editable">[EMAIL]</span>
+        </p>
+    </div>
+</div>
+
+<div class="article">
+    <h2>1. Scope of Services</h2>
+    <p>SwiftCall AI Solutions ("Provider") agrees to deliver the following services to <span class="editable">[CLIENT BUSINESS NAME]</span> ("Client"):</p>
+    <ol>
+        <li><strong>AI Voice Agent:</strong> Design, build, test, and deploy a custom AI-powered voice receptionist on Client's primary phone line (<span class="editable">[PHONE NUMBER]</span>)</li>
+        <li><strong>Call Handling:</strong> Inbound call answering, caller identification, inquiry handling, department routing, message taking, and email notifications</li>
+        <li><strong>Knowledge Base:</strong> Custom training on Client's business information, services, hours, pricing, FAQs, and staff directory</li>
+        <li><strong>Automation Workflows:</strong> <span class="editable">[NUMBER]</span> custom automation workflows including <span class="editable">[LIST — e.g., "daily status updates, missed call notifications, weekly reporting"]</span></li>
+        <li><strong>Ongoing Optimization:</strong> Regular call transcript review and prompt refinement at the frequency specified in the selected package</li>
+        <li><strong>Reporting:</strong> <span class="editable">[Weekly/Monthly]</span> performance reports covering call volume, resolution rate, and recommendations</li>
+    </ol>
+</div>
+
+<div class="article">
+    <h2>2. Fees & Payment</h2>
+    <p><strong>Setup Fee:</strong> <span class="editable">$3,500</span> — due upon execution of this agreement.</p>
+    <p><strong>Monthly Retainer:</strong> <span class="editable">$2,500</span> — billed on the 1st of each month via Stripe. First month prorated from go-live date.</p>
+    <p><strong>Call Volume:</strong> Up to 500 calls per month included. Overage billed at $0.15 per minute.</p>
+    <p><strong>Add-Ons:</strong></p>
+    <ul>
+        <li><span class="editable">[ADD-ON 1 and price, or "None"]</span></li>
+        <li><span class="editable">[ADD-ON 2 and price, or remove this line]</span></li>
+    </ul>
+    <p>All fees are in USD. Late payments incur a 1.5% monthly fee after 15 days past due.</p>
+</div>
+
+<div class="article">
+    <h2>3. Term & Termination</h2>
+    <p><strong>Minimum Term:</strong> <span class="editable">[3 / 6]</span> months from the go-live date.</p>
+    <p><strong>Renewal:</strong> After the minimum term, this agreement automatically renews month-to-month.</p>
+    <p><strong>Cancellation:</strong> Either party may cancel with 30 days written notice after the minimum term. No cancellation fees apply.</p>
+    <p><strong>Early Termination:</strong> If Client terminates before the minimum term, remaining monthly fees for the minimum term are due.</p>
+    <p><strong>Provider Termination:</strong> Provider may terminate with 30 days notice. In this case, all prepaid fees for undelivered services will be refunded.</p>
+</div>
+
+<div class="article">
+    <h2>4. Client Responsibilities</h2>
+    <p>Client agrees to:</p>
+    <ol>
+        <li>Provide accurate business information, staff contacts, and phone tree details during onboarding</li>
+        <li>Designate a primary point of contact for communication with Provider</li>
+        <li>Respond to Provider requests within 2 business days</li>
+        <li>Provide timely updates when business information changes (hours, staff, services, pricing)</li>
+        <li>Grant necessary access to phone systems and any third-party tools required for integration</li>
+    </ol>
+</div>
+
+<div class="article">
+    <h2>5. Service Level</h2>
+    <p><strong>Availability:</strong> AI voice agent will be operational 24/7 with 99.5% uptime target.</p>
+    <p><strong>Support Response:</strong> Email support within 24 hours (business days). Priority support clients receive same-day response.</p>
+    <p><strong>Issue Resolution:</strong> Critical issues (agent down, calls failing) addressed within 4 hours.</p>
+    <p><strong>Optimization:</strong> Provider will proactively monitor call quality and implement improvements without requiring Client request.</p>
+</div>
+
+<div class="article">
+    <h2>6. Intellectual Property & Ownership</h2>
+    <p><strong>Client Owns:</strong> All voice agent prompts, knowledge base content, and workflow logic created specifically for Client's use.</p>
+    <p><strong>Provider Retains:</strong> All proprietary tools, frameworks, templates, and methodologies used in delivery. Provider retains access to underlying platform accounts (Retell AI, n8n) during the term.</p>
+    <p><strong>Upon Termination:</strong> Client receives full export of their voice agent prompt, knowledge base, and workflow documentation within 7 days of termination.</p>
+</div>
+
+<div class="article">
+    <h2>7. Confidentiality</h2>
+    <p>Both parties agree to keep confidential all business information, customer data, pricing, and proprietary methods shared during this engagement. This obligation survives termination of this agreement.</p>
+    <p>Provider will not share Client's call recordings, transcripts, or customer information with any third party without written consent.</p>
+</div>
+
+<div class="article">
+    <h2>8. Compliance</h2>
+    <p>Provider will ensure all voice agent and automation workflows comply with:</p>
+    <ul>
+        <li>TCPA (Telephone Consumer Protection Act) — for any outbound calling or SMS</li>
+        <li>State-specific telemarketing regulations</li>
+        <li>Do-Not-Call registry requirements</li>
+        <li>Client's industry-specific regulations as communicated during onboarding</li>
+    </ul>
+</div>
+
+<div class="article">
+    <h2>9. Limitation of Liability</h2>
+    <p>Provider's total liability under this agreement shall not exceed the total fees paid by Client in the 3 months preceding any claim. Provider is not liable for indirect, incidental, or consequential damages including lost revenue or business interruption.</p>
+</div>
+
+<div class="article">
+    <h2>10. Modifications</h2>
+    <p>Changes to scope, pricing, or terms require written agreement from both parties. Provider will notify Client 30 days in advance of any price changes, which take effect at the next renewal period.</p>
+</div>
+
+<div class="signature-section">
+    <h2>Agreement</h2>
+    <p style="text-align: center; color: #888; font-size: 14px; margin-bottom: 40px;">By signing below, both parties agree to the terms outlined in this Service Agreement.</p>
+
+    <div class="signatures">
+        <div class="sig-block">
+            <div class="sig-label">CLIENT</div>
+            <div class="sig-line">
+                <div class="sig-label">Signature</div>
+            </div>
+            <div class="sig-line" style="margin-top: 30px;">
+                <div class="sig-label">Printed Name</div>
+                <div class="sig-name"><span class="editable">[CLIENT NAME]</span></div>
+            </div>
+            <div class="sig-line" style="margin-top: 30px;">
+                <div class="sig-label">Title</div>
+                <div class="sig-name"><span class="editable">[TITLE]</span></div>
+            </div>
+            <div class="sig-date">
+                <div class="sig-line">
+                    <div class="sig-label">Date</div>
+                </div>
+            </div>
+        </div>
+        <div class="sig-block">
+            <div class="sig-label">SWIFTCALL AI SOLUTIONS</div>
+            <div class="sig-line">
+                <div class="sig-label">Signature</div>
+            </div>
+            <div class="sig-line" style="margin-top: 30px;">
+                <div class="sig-label">Printed Name</div>
+                <div class="sig-name">Danny Al-Fanek / Karim Saad</div>
+            </div>
+            <div class="sig-line" style="margin-top: 30px;">
+                <div class="sig-label">Title</div>
+                <div class="sig-name">Co-Founders</div>
+            </div>
+            <div class="sig-date">
+                <div class="sig-line">
+                    <div class="sig-label">Date</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>SwiftCall AI Solutions — Chicago/Naperville, IL</p>
+    <p><a href="https://swiftcall.org">swiftcall.org</a> — (630) 352-3869</p>
+</div>
+
+</body>
+</html>
